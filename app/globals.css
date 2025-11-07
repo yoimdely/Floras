@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-night text-white antialiased;
+}
+
+.glass-panel {
+  @apply border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[0_40px_80px_-40px_rgba(23,34,52,0.9)];
+}
+
+.section {
+  @apply relative w-full py-24 md:py-32;
+}
+
+.container-inner {
+  @apply mx-auto w-full max-w-6xl px-6 md:px-8;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #30D086 0%, #59d8f0 50%, #fff5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.input-field {
+  @apply glass-panel flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition focus-within:border-emerald/60 focus-within:text-white;
+}
+
+.input-field input,
+.input-field select {
+  @apply w-full bg-transparent text-white placeholder:text-white/40 focus:outline-none;
+}
