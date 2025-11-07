@@ -7,22 +7,22 @@ const steps = [
   {
     title: "Оставляете адрес и фото",
     description: "Проводим аудит объекта и делимся точным прогнозом за 24 часа",
-    number: "1️⃣"
+    number: "01"
   },
   {
     title: "Подписываем договор",
     description: "Фиксируем SLA по сервису, показателям и коммуникации",
-    number: "2️⃣"
+    number: "02"
   },
   {
     title: "Готовим объект",
     description: "Проводим съемку, упаковываем листинги и подключаем каналы",
-    number: "3️⃣"
+    number: "03"
   },
   {
     title: "Запускаем за 5 дней",
     description: "Настраиваем цены, автоматизируем процессы, запускаем брони",
-    number: "4️⃣"
+    number: "04"
   }
 ];
 
@@ -41,9 +41,13 @@ export function HowItWorks() {
         </motion.h2>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {steps.map((step, index) => (
-            <Card key={step.title} delay={0.1 * index} className="flex h-full flex-col gap-4">
-              <div className="text-3xl">{step.number}</div>
-              <h3 className="text-2xl font-semibold text-white">{step.title}</h3>
+            <Card key={step.title} delay={0.08 * index} className="flex h-full flex-col gap-4">
+              <div className="flex items-center gap-4">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald/40 bg-emerald/10 text-lg font-semibold text-emerald">
+                  {step.number}
+                </span>
+                <h3 className="text-2xl font-semibold text-white">{step.title}</h3>
+              </div>
               <p className="text-sm text-white/70">{step.description}</p>
             </Card>
           ))}

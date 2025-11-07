@@ -31,23 +31,29 @@ export function Testimonials() {
   return (
     <section className="section" id="testimonials">
       <div className="container-inner">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center text-3xl font-semibold text-white sm:text-4xl"
+          className="mx-auto max-w-3xl text-center"
         >
-          Реальные истории владельцев
-        </motion.h2>
+          <span className="text-sm uppercase tracking-[0.4em] text-emerald/70">Отзывы</span>
+          <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">Реальные истории владельцев</h2>
+          <p className="mt-4 text-base text-white/70">
+            Средний рост дохода за первый сезон — 38 %. Мы фиксируем метрики и делимся ими еженедельно.
+          </p>
+        </motion.div>
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {testimonials.map((item, index) => (
-            <Card key={item.name} delay={0.1 * index} className="flex h-full flex-col gap-4">
+            <Card key={item.name} delay={0.08 * index} className="flex h-full flex-col gap-4">
               <div>
                 <p className="text-lg font-semibold text-white">{item.name}</p>
                 <p className="text-sm text-white/60">{item.property}</p>
               </div>
-              <p className="text-sm text-white/70">“{item.quote}”</p>
+              <p className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-white/70">
+                “{item.quote}”
+              </p>
               <div className="text-sm font-medium text-emerald">{item.stats}</div>
             </Card>
           ))}

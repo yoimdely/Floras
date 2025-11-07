@@ -41,13 +41,24 @@ export function Calculator() {
 
   return (
     <section id="calculator" className="section">
+      <div className="absolute inset-x-0 top-12 -z-10 h-[520px] bg-[radial-gradient(circle_at_center,_rgba(37,81,113,0.4),_transparent_70%)]" />
       <div className="container-inner grid gap-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start">
         <div className="space-y-6">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-3 rounded-full border border-emerald/30 bg-emerald/10 px-5 py-2 text-sm text-emerald/80"
+          >
+            <CalculatorIcon className="h-4 w-4" />
+            Интерактивный калькулятор дохода
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.05 }}
             className="text-3xl font-semibold text-white sm:text-4xl"
           >
             Калькулятор дохода
@@ -65,10 +76,10 @@ export function Calculator() {
             <div className="grid gap-6 md:grid-cols-2">
               <label className="flex flex-col gap-3">
                 <span className="text-sm font-medium text-white/80">Район</span>
-                <div className="glass-panel flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                <div className="input-field">
                   <MapPin className="h-5 w-5 text-emerald" />
                   <select
-                    className="w-full bg-transparent text-white/90 outline-none"
+                    className="w-full"
                     value={form.district}
                     onChange={(event) =>
                       setForm((prev) => ({
@@ -87,10 +98,10 @@ export function Calculator() {
               </label>
               <label className="flex flex-col gap-3">
                 <span className="text-sm font-medium text-white/80">Формат сдачи</span>
-                <div className="glass-panel flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                <div className="input-field">
                   <CalculatorIcon className="h-5 w-5 text-emerald" />
                   <select
-                    className="w-full bg-transparent text-white/90 outline-none"
+                    className="w-full"
                     value={form.rentalMode}
                     onChange={(event) =>
                       setForm((prev) => ({
@@ -132,7 +143,7 @@ export function Calculator() {
               </label>
               <label className="flex flex-col gap-3">
                 <span className="text-sm font-medium text-white/80">Спальных мест</span>
-                <div className="glass-panel flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+                <div className="input-field">
                   <Users className="h-5 w-5 text-emerald" />
                   <input
                     type="number"
@@ -145,7 +156,7 @@ export function Calculator() {
                         beds: Number(event.target.value)
                       }))
                     }
-                    className="w-full bg-transparent text-white outline-none"
+                    className="w-full"
                   />
                 </div>
               </label>
@@ -156,7 +167,7 @@ export function Calculator() {
           </Card>
         </div>
         <div className="space-y-6">
-          <Card className="space-y-6">
+          <Card className="space-y-6 bg-gradient-to-br from-white/10 via-white/5 to-transparent">
             <div>
               <h3 className="text-xl font-semibold text-white">Ваш прогноз дохода</h3>
               <p className="text-sm text-white/60">Обновляется в реальном времени при изменении параметров.</p>
@@ -199,6 +210,11 @@ export function Calculator() {
                 </dd>
               </div>
             </dl>
+          </Card>
+          <Card className="space-y-4 text-sm text-white/70">
+            <h3 className="text-lg font-semibold text-white">Как увеличить доход</h3>
+            <p>Персональная стратегия включает анализ конкурентов, событий и оптимальную модель размещения.</p>
+            <p>После заявки менеджер свяжется с вами в течение 2 часов и пришлёт расширенный финансовый прогноз.</p>
           </Card>
         </div>
       </div>

@@ -11,7 +11,7 @@ import { Footer } from "@/components/Footer";
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen bg-night text-white">
+    <main className="relative flex min-h-screen flex-col overflow-hidden bg-night/80 pb-24 text-white">
       <Header />
       <Hero />
       <Calculator />

@@ -15,10 +15,10 @@ export function Partners() {
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
+          <span className="text-sm uppercase tracking-[0.4em] text-emerald/70">Партнёрам</span>
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">Партнёрская программа Flora Home</h2>
           <p className="text-base text-white/70">
-            Делитесь нашими кейсами с владельцами и получайте вознаграждение. Мы ценим партнёров, которые разделяют нашу философию
-            сервиса, внимания и технологий.
+            Делитесь нашими кейсами с владельцами и получайте вознаграждение. Мы ценим партнёров, которые разделяют философию сервиса, внимания и технологий.
           </p>
           <Card className="space-y-4 bg-white/5">
             <h3 className="text-xl font-semibold text-white">Оффер для партнёров</h3>

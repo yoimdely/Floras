@@ -11,9 +11,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants = {
   primary:
-    "bg-emerald text-night font-semibold hover:bg-emerald/90 transition-colors shadow-lg shadow-emerald/30",
+    "relative overflow-hidden bg-gradient-to-r from-emerald via-emerald/80 to-cyan-300 text-night font-semibold transition-[filter,transform] shadow-[0_20px_45px_-20px_rgba(48,208,134,0.7)] hover:brightness-110",
   secondary:
-    "bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/15",
+    "border border-white/20 bg-white/10 text-white font-semibold hover:bg-white/15 hover:border-white/30",
   ghost: "text-white/80 hover:text-white"
 };
 

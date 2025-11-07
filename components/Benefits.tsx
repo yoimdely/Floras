@@ -41,28 +41,29 @@ export function Benefits() {
   return (
     <section id="benefits" className="section">
       <div className="container-inner">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center text-3xl font-semibold text-white sm:text-4xl"
+          className="mx-auto max-w-3xl text-center"
         >
-          Почему владельцы выбирают Flora Home
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mx-auto mt-4 max-w-3xl text-center text-base text-white/70"
-        >
-          Соединяем премиальный сервис, точную аналитику и тёплую коммуникацию. Владельцы получают максимальный доход и полный покой.
-        </motion.p>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <span className="text-sm uppercase tracking-[0.4em] text-emerald/70">Премиальная экспертиза</span>
+          <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+            Почему владельцы выбирают <span className="gradient-text">Flora Home</span>
+          </h2>
+          <p className="mt-4 text-base text-white/70">
+            Соединяем аналитику, сервис и тёплую коммуникацию. Владельцы получают максимальный доход и полный покой.
+          </p>
+        </motion.div>
+        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {benefits.map((benefit, index) => (
-            <Card key={benefit.title} delay={0.1 * index} className="h-full space-y-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald/10 text-emerald">
+            <Card
+              key={benefit.title}
+              delay={0.05 * index}
+              className="h-full space-y-4 transition-transform duration-300 hover:-translate-y-1"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald/40 to-cyan-400/30 text-white">
                 <benefit.icon className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-semibold text-white">{benefit.title}</h3>

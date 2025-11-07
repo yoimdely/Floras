@@ -44,20 +44,24 @@ export function FAQ() {
   return (
     <section id="faq" className="section">
       <div className="container-inner">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center text-3xl font-semibold text-white sm:text-4xl"
+          className="mx-auto max-w-3xl text-center"
         >
-          Частые вопросы владельцев
-        </motion.h2>
+          <span className="text-sm uppercase tracking-[0.4em] text-emerald/70">FAQ</span>
+          <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">Частые вопросы владельцев</h2>
+          <p className="mt-4 text-base text-white/70">
+            Ответы, которые мы обсуждаем на первых встречах. Все процессы прозрачны и закреплены в SLA.
+          </p>
+        </motion.div>
         <div className="mx-auto mt-10 max-w-3xl space-y-4">
           {questions.map((item) => {
             const isOpen = open === item.question;
             return (
-              <Card key={item.question} className="space-y-0 border border-white/10 bg-white/5 p-0">
+              <Card key={item.question} className="space-y-0 overflow-hidden p-0">
                 <button
                   onClick={() => setOpen(isOpen ? "" : item.question)}
                   className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
